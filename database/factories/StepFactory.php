@@ -22,7 +22,7 @@ class StepFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => 'Etape 1'
         ];
     }
 }

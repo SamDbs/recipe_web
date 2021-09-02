@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Role;
+use App\Models\RecipeTypes;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class RoleFactory extends Factory
+class RecipeTypesFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Role::class;
+    protected $model = RecipeTypes::class;
 
     /**
      * Define the model's default state.
@@ -22,7 +22,8 @@ class RoleFactory extends Factory
     public function definition()
     {
         return [
-            'name' => 'admin',
+            'recipe_id' => 1,
+            'type_id' => 1,
         ];
     }
 }

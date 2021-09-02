@@ -22,7 +22,9 @@ class RecipeStepsFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'description' => "explication de l'étape 1",
+            'recipe_id' => 1,
+            'step_id' => 1,
         ];
     }
 }

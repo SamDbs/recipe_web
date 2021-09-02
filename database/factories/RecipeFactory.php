@@ -24,7 +24,7 @@ class RecipeFactory extends Factory
         return [
             'title' => 'Tarte aux pommes',
             'intro' => "Il s'agit de la meilleure tarte aux pommes",
-
+            'user_id' => 1
         ];
     }
 }

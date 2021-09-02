@@ -22,7 +22,10 @@ class IngredientsRecipesFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'quantity' => '200',
+            'measure_unit' => 'grammes',
+            'recipe_id' => 1,
+            'ingredient_id' => 1,
         ];
     }
 }

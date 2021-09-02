@@ -3,10 +3,11 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Recipe;
-use App\Models\Step;
+use App\Models\Role;
+use App\Models\User;
 
-class StepSeeder extends Seeder
+
+class RoleSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,9 +16,9 @@ class StepSeeder extends Seeder
      */
     public function run()
     {
-        Step::factory()
+        Role::factory()
             ->count(1)
-            ->has(Recipe::factory()->count(1))
+            ->has(User::factory()->count(1))
             ->create();
     }
 }

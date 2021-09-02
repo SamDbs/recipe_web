@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\RecipeSteps;
 
 class RecipeStepsSeeder extends Seeder
 {
@@ -13,6 +14,8 @@ class RecipeStepsSeeder extends Seeder
      */
     public function run()
     {
-        //
+        RecipeSteps::factory()
+            ->count(1)
+            ->create();
     }
 }

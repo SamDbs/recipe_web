@@ -24,7 +24,7 @@ class IngredientFactory extends Factory
     {
 
         return [
-            'name' => $this->faker->ingredient,
+            'name' => 'farine',
         ];
     }
 }

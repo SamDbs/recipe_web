@@ -3,10 +3,12 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\User;
 use App\Models\Recipe;
-use App\Models\Type;
+use App\Models\Role;
 
-class TypeSeeder extends Seeder
+
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,10 +17,9 @@ class TypeSeeder extends Seeder
      */
     public function run()
     {
-        Type::factory()
-        ->count(1)
-        ->has(Recipe::factory()->count(1))
-        ->create();
-
+        User::factory()
+            ->count(1)
+            ->has(Recipe::factory()->count(1))
+            ->create();
     }
 }
