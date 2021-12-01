@@ -7,13 +7,18 @@ use Illuminate\Http\Request;
 
 class RecipeController extends Controller
 {
+
+    protected $recipes;
+
+    public function __construct(Recipe $recipes){
+        $this->recipes = $recipes;
+    }
+
     public function index()
     {
         $recipes = Recipe::all();
 
-        return view('recipes.recipes', [
-            'recipes' => $recipes
-        ]);
+        return response()->json($recipes);
     }
 
     public function show($id)
