@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RecipeController;
+use App\Http\Controllers\IngredientController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
+    Route::apiResource('/recipes', RecipeController::class);
+    Route::apiResource('/ingredients', IngredientController::class);
+
     return $request->user();
 });
 
-Route::get('/recipes', [RecipeController::class, 'index']);
-Route::get('/recipes/{id}', [RecipeController::class, 'show']);
