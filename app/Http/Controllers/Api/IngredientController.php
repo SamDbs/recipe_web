@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Ingredient;
 
@@ -9,7 +10,8 @@ class IngredientController extends Controller
 {
     protected $ingredients;
 
-    public function __construct(Ingredient $ingredients){
+    public function __construct(Ingredient $ingredients)
+    {
         $this->ingredients = $ingredients;
     }
 
@@ -17,8 +19,6 @@ class IngredientController extends Controller
     {
         $ingredients = Ingredient::all();
 
-        return view('recipes.recipes', [
-            'ingredient' => $ingredients
-        ]);
+        return $ingredients;
     }
 }

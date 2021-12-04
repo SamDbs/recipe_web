@@ -2,8 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\RecipeController;
-use App\Http\Controllers\IngredientController;
+use App\Http\Controllers\Api\RecipeController;
+use App\Http\Controllers\Api\IngredientController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,10 +16,10 @@ use App\Http\Controllers\IngredientController;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    Route::apiResource('/recipes', RecipeController::class);
-    Route::apiResource('/ingredients', IngredientController::class);
+//Route::middleware('auth:api')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
 
-    return $request->user();
-});
+Route::apiResource('/recipes', RecipeController::class);
+Route::apiResource('/ingredients', IngredientController::class);
 
