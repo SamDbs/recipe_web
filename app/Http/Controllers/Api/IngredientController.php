@@ -10,7 +10,8 @@ class IngredientController extends Controller
 {
     protected $ingredients;
 
-    public function __construct(Ingredient $ingredients){
+    public function __construct(Ingredient $ingredients)
+    {
         $this->ingredients = $ingredients;
     }
 
@@ -18,6 +19,6 @@ class IngredientController extends Controller
     {
         $ingredients = Ingredient::all();
 
-        return response()->json($ingredients);
+        return $ingredients;
     }
 }

@@ -19,7 +19,7 @@ class RecipeController extends Controller
     {
         $recipes = Recipe::all();
 
-        return response()->json($recipes);
+        return $recipes;
     }
 
     public function show($id)
