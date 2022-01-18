@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\Api\IngredientController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\RecipeController;
-use App\Http\Controllers\IngredientController;
+use App\Http\Controllers\Api\RecipeController;
+use App\Http\Controllers\Api\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,11 +17,9 @@ use App\Http\Controllers\IngredientController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    Route::apiResource('/recipes', RecipeController::class);
-    Route::apiResource('/ingredients', IngredientController::class);
-
-    return $request->user();
-});
+//Route::middleware('auth:api')->get('/login', function (Request $request) {
+//    Route::apiResource('/ingredients', IngredientController::class);
+//    Route::apiResource('/recipes', RecipeController::class);
+//    return $request->user();
+//});
 

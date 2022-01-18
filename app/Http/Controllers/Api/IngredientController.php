@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Ingredient;
 
@@ -17,8 +18,6 @@ class IngredientController extends Controller
     {
         $ingredients = Ingredient::all();
 
-        return view('recipes.recipes', [
-            'ingredient' => $ingredients
-        ]);
+        return response()->json($ingredients);
     }
 }
