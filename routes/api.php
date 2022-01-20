@@ -22,4 +22,5 @@ use App\Http\Controllers\Api\IngredientController;
 
 Route::apiResource('/recipes', RecipeController::class);
 Route::apiResource('/ingredients', IngredientController::class);
+Route::apiResource('/ingredients/{id}', 'IngredientController::show');
 

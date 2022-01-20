@@ -21,4 +21,21 @@ class IngredientController extends Controller
 
         return $ingredients;
     }
+
+    public function show($id)
+    {
+        $ingredient = Ingredient::where('id', $id)->get();
+
+        return $ingredient;
+    }
+
+    public function edit($id)
+    {
+//       edit method
+    }
+
+    public function delete($id)
+    {
+//    softdelete method
+    }
 }

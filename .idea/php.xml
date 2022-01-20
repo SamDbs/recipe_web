@@ -183,6 +183,11 @@
       <extension name="zstd" enabled="true" />
     </extensions>
   </component>
+  <component name="PhpStepFilterConfiguration">
+    <skipped_functions>
+      <skipped_function name="App\Http\Controllers\Api\IngredientController-&gt;index" />
+    </skipped_functions>
+  </component>
   <component name="PhpUnit">
     <phpunit_settings>
       <PhpUnitSettings configuration_file_path="$PROJECT_DIR$/phpunit.xml" custom_loader_path="$PROJECT_DIR$/vendor/autoload.php" use_configuration_file="true" />
