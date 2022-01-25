@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Ingredient;
@@ -24,7 +25,7 @@ class IngredientController extends Controller
 
     public function show($id)
     {
-        $ingredient = Ingredient::where('id', $id)->get();
+        $ingredient = Ingredient::where('id', $id)->first();
 
         return $ingredient;
     }
