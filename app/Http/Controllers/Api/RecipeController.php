@@ -24,10 +24,12 @@ class RecipeController extends Controller
 
     public function show($id)
     {
-        //
+        $recipe = Recipe::where('id', $id)->first();
+
+        return $recipe;
     }
 
-    public function create()
+    public function insert()
     {
         //
     }

@@ -16,7 +16,7 @@ class Authenticate extends Middleware
      */
     public function handle($request, $next)
     {
-        return Auth::authenticate() ?: $next($request);
+        return Auth::user() ? $next($request): response()->json('2')  ;
     }
 
 }

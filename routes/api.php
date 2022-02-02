@@ -22,9 +22,11 @@ Route::post('/login', [LoginController::class, 'authenticate' ]);
 //Route::middleware('auth:api')->get('/user', function (Request $request) {
 //    return $request->user();
 //});
-Route::middleware(['api'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::get('/recipes', [RecipeController::class, 'index']);
+    Route::get('/recipes/{id}', [RecipeController::class, 'show']);
     Route::get('/ingredients', [IngredientController::class, 'index']);
+    Route::post('/ingredients', [IngredientController::class, 'insert']);
     Route::get('/ingredients/{id}', [IngredientController::class, 'show' ]);
     Route::post('/logout', [LoginController::class, 'logout' ]);
     Route::post('/refresh', [LoginController::class, 'refresh' ]);
