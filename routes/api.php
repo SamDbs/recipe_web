@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\RecipeController;
 use App\Http\Controllers\Api\IngredientController;
+use App\Http\Controllers\Authentication\LoginController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,10 +18,23 @@ use App\Http\Controllers\Api\IngredientController;
 |
 */
 
+Route::post('/login', [LoginController::class, 'authenticate' ]);
 //Route::middleware('auth:api')->get('/user', function (Request $request) {
 //    return $request->user();
 //});
+Route::middleware(['auth'])->group(function () {
+    Route::get('/recipes', [RecipeController::class, 'index']);
+    Route::get('/recipes/{id}', [RecipeController::class, 'show']);
+    Route::get('/recipes/{id}/steps', [RecipeController::class, 'getAllStepsByRecipe']);
+    Route::get('/ingredients', [IngredientController::class, 'index']);
+    Route::post('/ingredients', [IngredientController::class, 'insert']);
+    Route::get('/ingredients/{id}', [IngredientController::class, 'show' ]);
+    Route::post('/logout', [LoginController::class, 'logout' ]);
+    Route::post('/refresh', [LoginController::class, 'refresh' ]);
+});
 
-Route::apiResource('/recipes', RecipeController::class);
-Route::apiResource('/ingredients', IngredientController::class);
+
+
+
+
 
