@@ -4,15 +4,16 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Recipe;
+use App\Models\RecipeSteps;
 use Illuminate\Http\Request;
 
 class RecipeController extends Controller
 {
 
-    protected $recipes;
+    protected $recipe;
 
-    public function __construct(Recipe $recipes){
-        $this->recipes = $recipes;
+    public function __construct(Recipe $recipe){
+        $this->recipe = $recipe;
     }
 
     public function index()
@@ -53,5 +54,13 @@ class RecipeController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getAllStepsByRecipe($id)
+    {
+        // steps where recipe id is the param
+        $recipeSteps = RecipeSteps::where('recipe_id', $id)->get();
+
+        return $recipeSteps;
     }
 }

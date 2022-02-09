@@ -885,13 +885,13 @@ select {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
-.py-12 {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 .px-6 {
   padding-left: 1.5rem;

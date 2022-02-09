@@ -25,6 +25,7 @@ Route::post('/login', [LoginController::class, 'authenticate' ]);
 Route::middleware(['auth'])->group(function () {
     Route::get('/recipes', [RecipeController::class, 'index']);
     Route::get('/recipes/{id}', [RecipeController::class, 'show']);
+    Route::get('/recipes/{id}/steps', [RecipeController::class, 'getAllStepsByRecipe']);
     Route::get('/ingredients', [IngredientController::class, 'index']);
     Route::post('/ingredients', [IngredientController::class, 'insert']);
     Route::get('/ingredients/{id}', [IngredientController::class, 'show' ]);
